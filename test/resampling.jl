@@ -224,7 +224,7 @@ end
                            measure=[rms, rmslp1], acceleration=accel)
         result = evaluate!(mach, resampling=holdout, verbosity=verb,
                            acceleration=accel)
-        result.measurement[1] ≈ 2/3
+        @test result.measurement[1] ≈ 2/3
 
         # test direct evaluation of a model + data:
         result = evaluate(model, X, y, verbosity=1,
